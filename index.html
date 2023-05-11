@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>EIGHT PUZZLE SOLVER GAME</title>
+        <meta charset="UTF-8" />
+        <!--Memanggil script CSS untuk mengatur tampilan dari aplikasi-->
+        <link rel="icon" href="Logo ITB.png" />
+        <link rel="stylesheet" type="text/css" href="style/general.css" />
+        <link rel="stylesheet" type="text/css" href="style/states.css" />
+        <link rel="stylesheet" type="text/css" href="style/stats.css" />
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css" />
+        <script>
+            if(navigator.userAgent.match(/iPhone/i)) {
+              var meta = document.createElement('meta');
+              meta.name = 'viewport';
+              meta.content = 'width=device-width, initial-scale=0.85';
+              document.getElementsByTagName('head')[0].appendChild(meta);
+            }
+          </script>
+    </head>
+    <body>
+        <div id="container-box" class="modal container ease" style="display: none;">
+            <div class="stats-box completed">
+                <button id="close-modal-button" class="close-modal">X</button>
+            </div>
+        </div>
+        <!--Mendefinisikan Deskripsi dari Tugas UTS-->
+        <center>
+        <img src="Logo ITB.png" alt="Logo ITB" style="width:150px;height:150px;">
+        <marquee><h2><p style="color:rgb(2, 3, 72)">UTS Sistem Intelijen 2023 | Nama: Pray Putra Hasianro Nadeak | NIM: 23222048 | Angkatan: 2022 | Prodi: Magister Teknik Elektro | Opsi: Layanan Teknologi Informasi(LTI)</p></h2></marquee> 
+        </center>
+        <h1 class="title ease">EIGHT PUZZLE SOLVER GAME</h1>
+        <div class="grid ease" id="grid">
+        <!--Mendefinisikan Nilai dari Setiap Tile pada Puzzle-->
+        <!--Mendefinisikan Default Initial State-->
+            <div class="grid-item no-select ease" id="5">5</div>
+            <div class="grid-item hidden" id="0">0</div>
+            <div class="grid-item no-select ease" id="4">4</div>
+            <div class="grid-item no-select ease" id="8">8</div>
+            <div class="grid-item no-select ease" id="3">3</div>
+            <div class="grid-item no-select ease" id="2">2</div>
+            <div class="grid-item no-select ease" id="7">7</div>
+            <div class="grid-item no-select ease" id="6">6</div>
+            <div class="grid-item no-select ease" id="1">1</div>
+        </div>
+        <!--Mendefinisikan Fungsi dari setiap tombol-->
+        <div class="btn-panel">
+            <!--Memanggil fungsi reset puzzle ke default initial state-->
+            <button class="btn btn-box ease" id="reset" onclick="resetGrid()">RESET</button> 
+            <!--Memanggil fungsi finish puzzle sesuai goal state-->
+            <button class="btn btn-box ease" id="solve" onclick="solveGrid()">SELESAIKAN</button>
+            <!--Memanggil fungsi acak puzzle-->
+            <button class="btn btn-box ease" id="shuffle" onclick="shuffleGrid()">ACAK</button> 
+            <!--Memanggil fungsi acak puzzle-->
+            <button class="btn btn-box ease" id="explanation" onclick="openPDF()">PENJELASAN</button> 
+            <!--Memanggil fungsi statistik gerakan tile pada puzzle-->
+            <button class="btn btn-box ease remove" id="stats" onclick="openStatsModal()">STATISTIK</button>
+            <!--Memanggil fungsi tampilah histori gerakan tile pada puzzle-->
+            <button class="btn btn-box ease remove" id="solution" onclick="showSolution()">LIHAT SOLUSI</button> 
+        </div>
+    </body>
+    <!--Memanggil class Java untuk menampilkan animasi gerakan puzzle-->
+    <script src="./scripts/8puzzle-animations.js"></script>
+    <!--Memanggil class Java untuk menggerakkan puzzle-->
+    <script src="./scripts/8puzzle-moves.js"></script> 
+    <!--Memanggil class Java untuk menampilkan grid dari setiap tile-->
+    <script src="./scripts/8puzzle-grid.js"></script> 
+    <!--Memanggil class Java Algoritma A* untuk menggerakkan tile menuju Goal State-->
+    <script src="./scripts/algo-implementation.js"></script> 
+    <!--Memanggil class Java fungsi Decision Tree pada Terminal-->
+    <script src="./scripts/decision_tree.js"></script>
+</html>

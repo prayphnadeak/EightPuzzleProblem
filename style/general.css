@@ -1,0 +1,146 @@
+/*----------Mengatur background color dari tampilan web apps---------*/
+body {
+    height: 100vh;
+    background: linear-gradient(to top, #0d47da 0%, #548df0 75%);
+    overflow-y: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/*-------------Mengatur tampilan dari judul/nama web apps------------*/
+.title {
+    font-size: 3em;
+    font-weight: 700;
+    color: #e4faf8;
+    text-align: center;
+    text-shadow: #03417e 0px 0px 6px;
+}
+
+/*-------------Mengatur tampilan dari grid 3x3 puzzle----------------*/
+.grid {
+    max-width: 410px;
+    max-height: 600px;
+    min-width: 300px;
+    min-height: 300px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 40%;
+    height: 35%;
+    margin: 0 auto;
+    background-color: #1966c472;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(93, 127, 220, 0.5);
+}
+
+.grid-item {
+    margin: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: #c5c6c7;
+    background-color: #09274c;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(92, 88, 11, 0.5);
+}
+
+.grid-item:hover {
+    background-color: #8ec4c0;
+    color: #1f2833;
+}
+
+/*---------Mengatur tampilan tombol di bawah grid 3x3 puzzle----------*/
+.btn {
+    transition: all 0.3s ease;
+    display: block;
+    background-color: #1f2833;
+    color: #C5C6C7;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn-box {
+    width: 200px;
+    height: 60px;
+    margin-left: 3%;
+    margin-right: 3%;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.648);
+}
+
+.btn2 {
+    display: block;
+    margin-top: 2%;
+    background-color: #443e44;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.btn2:hover {
+    scale: 1.2;
+    background-color: #e7b9ea;
+    color: #1f2833;
+}
+
+.btn:hover {
+    scale: 1.2;
+    background-color: #45a29d0c;
+}
+
+.btn:disabled {
+    background-color: #1f2833;
+    color: #c5c6c7;
+}
+
+.btn-panel {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.btn-assist {
+    margin-top: 2%;
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    width: 15%;
+}
+
+.ease {
+    transition: all 0.3s ease;
+}
+
+/*---------Mengatur tampilan opacity dari animasi puzzle----------*/
+.fade-in {
+    opacity: 0;
+    animation: fade-in 0.2s ease-in forwards;
+}
+
+.fade-out {
+    opacity: 1;
+    animation: fade-out 0.2s ease-in forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
